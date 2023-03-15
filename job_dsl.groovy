@@ -1,16 +1,15 @@
-job('Disk Space Check') {
-    steps {
-        shell('df')
-    }
-}
-
-job('Daily Dose of Satisfaction') {
+freeStyleJob('/Tools/clone-repository') {
     parameters {
-        stringParam('NAME')
+        stringParam('GIT_REPOSITORY_URL', '', 'Git URL of the repository to clone')
     }
+
+    wrappers {
+        preBuildCleanup {
+            preBuildCleanup()
+        }
+    }
+
     steps {
-        shell('echo "Hello dear ${NAME}!"')
-        shell('date')
-        shell('echo "This is your DDoS number ${BUILD_NUMBER}."')
+        shell('git clone ${GIT_REPOSITORY_URL}')
     }
 }
