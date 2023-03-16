@@ -1,4 +1,5 @@
-if [[ "$(docker images -q mymarvin:latest 2> /dev/null)" == "" ]]; then
-  docker build tests -t mymarvin
+if [[ "$(docker images -q mymarvin-dependencies:latest 2> /dev/null)" == "" ]]; then
+    docker build -t mymarvin-dependencies -f dockerfiles/dependencies.Dockerfile .
 fi
-docker compose up --no-log-prefix
+docker build -t mymarvin-main -f dockerfiles/main.Dockerfile .
+docker run --rm -p 8080:8080 mymarvin-main

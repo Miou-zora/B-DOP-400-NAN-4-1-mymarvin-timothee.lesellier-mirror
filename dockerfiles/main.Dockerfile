@@ -1,4 +1,4 @@
-FROM mymarvin:latest
+FROM mymarvin-dependencies:latest
 
 WORKDIR /var/jenkins_home
 COPY my_marvin.yml .
