@@ -50,6 +50,7 @@ jenkins:
               - "Job/Create"
               - "Job/Move"
               - "Job/Configure"
+              - "Job/Cancel"
             assignments:
               - "vaugie_g"
           - name: "assist"
