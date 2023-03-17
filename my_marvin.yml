@@ -35,6 +35,7 @@ jenkins:
             permissions:
               - "Overall/Read"
               - "Job/Build"
+              - "Job/Read"
               - "Job/Workspace"
             assignments:
               - "i_dont_know"
@@ -42,6 +43,7 @@ jenkins:
             description: "Group Obsessively Researching Innovation Linked to Learning and Accomplishment"
             permissions:
               - "Overall/Read"
+              - "Job/Read"
               - "Job/Build"
               - "Job/Workspace"
               - "Job/Delete"
