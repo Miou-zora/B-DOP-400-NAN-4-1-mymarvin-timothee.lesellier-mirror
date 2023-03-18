@@ -35,6 +35,7 @@ freeStyleJob('Tools/SEED') {
                     }
                     triggers {
                         githubPush()
+                        scm('*/1 * * * *')
                     }
                         steps {
                             shell('make fclean')
